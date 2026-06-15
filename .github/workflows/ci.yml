@@ -1,0 +1,20 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Listar arquivos
+        run: ls -la
+
+      - name: Verificar Docker Compose
+        run: cat docker-compose.yml
