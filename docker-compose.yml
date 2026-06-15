@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  user-service:
+    build: ./servico ao usuario
+
+  product-service:
+    build: ./produto-servico
+
+  order-service:
+    build: ./servico de pedidos
