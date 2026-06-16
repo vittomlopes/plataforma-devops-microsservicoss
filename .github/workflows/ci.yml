@@ -20,5 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install flask requests pytest
 
-      - name: Run tests
-        run: pytest
+     - name: Run tests
+  run: |
+    cd user-service
+    pytest
