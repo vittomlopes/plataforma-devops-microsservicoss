@@ -7,14 +7,18 @@ on:
       - feature/sprint-2
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verificar arquivos
-        run: ls -la
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-      - name: Verificar Docker Compose
-        run: cat docker-compose.yml
+      - name: Install dependencies
+        run: pip install flask requests pytest
+
+      - name: Run tests
+        run: pytest
