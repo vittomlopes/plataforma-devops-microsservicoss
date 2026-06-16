@@ -4,16 +4,16 @@ on:
   push:
     branches:
       - main
+      - feature/sprint-2
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Listar arquivos
+      - name: Verificar arquivos
         run: ls -la
 
       - name: Verificar Docker Compose
